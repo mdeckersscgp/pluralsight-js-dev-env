@@ -1,12 +1,13 @@
 environment:
   matrix:
-    - nodejs_version: "6"
-  install:
-      - ps: Install-Product node $env:nodejs_version
-      - npm install
+  - nodejs_version: "6"
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
 
-  test-script:
-       - node --version
-       - npm --version
-       - npm test
-       - build: off
+test-script:
+  - node --version
+  - npm --version
+  - npm test
+
+build: off
