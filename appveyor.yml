@@ -6,7 +6,7 @@ environment:
       - npm install
 
       test-script:
-        - node --version
-        - npm --version
-        - npm test
-        - build: off
+       - node --version
+       - npm --version
+       - npm test
+       - build: off
