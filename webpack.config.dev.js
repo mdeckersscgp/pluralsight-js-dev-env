@@ -9,7 +9,7 @@ export default {
    ],
    target: 'web',
    output: {
-     path:path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'src'),
      publicPath: '/',
      filename: 'bundle.js'
    },
@@ -17,10 +17,10 @@ export default {
      contentBase: path.resolve(__dirname, 'src')
    },
    plugins: [],
-   modules: {
+  module: {
      loaders: [
-       {test: /\.js$/, exclude: /node_modules/, loaders: ['bable']},
-       {test: /\.css$/, loadrs: ['style', 'css']}
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+      {test: /\.css$/, loaders: ['style','css']}
      ]
    }
-};
+}
