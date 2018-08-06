@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///webpack:///src/index.css"],"names":[],"mappings":"AAAA,KACE,sBAAwB,CAG1B,SACE,WAAa","file":"main.eb02f3fec98ff2a15d29f0ccadf11e9e.css","sourcesContent":["body {\n  font-family: sans-serif;\n}\n\ntable th {\n  padding: 50x;\n}\n\n\n\n/** WEBPACK FOOTER **\n ** webpack:///src/index.css\n **/"],"sourceRoot":""}

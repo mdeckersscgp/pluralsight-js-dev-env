@@ -5,13 +5,20 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security_check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security_check open:src lint:watch test:watch start-mockapi",
     "lint": "esw webpack.config.* src buildScripts/srcServer.js --color",
     "lint:watch": "npm run lint -- --watch",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security_check": "nsp check",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
   },
   "repository": {
     "type": "git",
@@ -60,6 +67,7 @@
     "webpack-md5-hash": "0.0.5"
   },
   "dependencies": {
+    "whatwg-fetch": "1.0.0",
     "@types/chalk": "^2.2.0",
     "@types/numeral": "0.0.25"
   }
